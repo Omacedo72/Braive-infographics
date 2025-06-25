@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIVE Growth Studio | Our Methodology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 250px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0582CA, #00A6FB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .phase-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .timeline-container {
+            position: relative;
+            padding-left: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 800px;
+        }
+        .timeline-container:before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #cbd5e1;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2.5rem;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #0582CA;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <span class="gradient-text">BRAIVE</span> Growth Studio
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#methodology-intro" class="text-gray-600 hover:text-[#0582CA] transition">Our Process</a>
+                <a href="#phases" class="text-gray-600 hover:text-[#0582CA] transition">Phases</a>
+                <a href="#ai-integration" class="text-gray-600 hover:text-[#0582CA] transition">AI's Role</a>
+                <a href="#benefits" class="text-gray-600 hover:text-[#0582CA] transition">Benefits</a>
+            </nav>
+            <a href="#contact" class="bg-[#0582CA] hover:bg-[#006494] text-white font-bold py-2 px-4 rounded-lg transition">Get Started</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <section id="methodology-intro" class="text-center mb-20 md:mb-32">
+            <h2 class="text-4xl md:text-6xl font-black mb-4">Our Methodology: Growth Engineered.</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">At BRAIVE Growth Studio, success isn't left to chance. Our structured, data-driven, and AI-amplified methodology ensures predictable outcomes, maximizes value, and accelerates your path to sustainable growth.</p>
+        </section>
+
+        <section id="phases" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">The BRAIVE Growth Framework</h3>
+            <div class="timeline-container">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="phase-card p-8">
+                        <h4 class="text-2xl font-bold text-[#0582CA] mb-2">Phase 1: Deep Assessment & Data Synthesis</h4>
+                        <p class="text-gray-600 mb-6">We begin by conducting a thorough diagnostic of your current state, market landscape, and internal capabilities. Our process involves comprehensive data collection, stakeholder interviews, and an intensive review of existing systems and processes. This phase is heavily amplified by AI, allowing us to rapidly synthesize vast datasets, identify hidden patterns, and uncover critical insights that form the foundation for strategic development.</p>
+                        <div class="chart-container">
+                            <canvas id="insightsChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">Example: Insights Gained Across Different Data Sources.</p>
+
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <h5 class="text-xl font-semibold mb-4">✨ Explore Industry-Specific Insights ✨</h5>
+                            <p class="text-gray-600 text-sm mb-3">See how Deep Assessment & Data Synthesis applies to your specific industry. (e.g., "Healthcare", "Retail", "Manufacturing")</p>
+                            <input type="text" id="industryInput" placeholder="Enter your industry" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00A6FB] mb-3">
+                            <button id="generateInsightBtn" class="w-full bg-[#F26C4F] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition">Get Industry Insight</button>
+                            <div id="loadingIndicator" class="mt-4 text-center text-gray-500 hidden">Generating insight...</div>
+                            <div id="llmOutput" class="mt-4 p-3 bg-gray-100 rounded-md text-sm text-gray-700 border border-gray-200 min-h-[50px] flex items-center justify-center text-center">
+                                Your personalized industry insight will appear here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="phase-card p-8">
+                        <h4 class="text-2xl font-bold text-[#0582CA] mb-2">Phase 2: Strategy Design & Solution Engineering</h4>
+                        <p class="text-gray-600 mb-6">Building on the insights from Phase 1, we collaboratively engineer a tailored strategy. This involves developing innovative solutions, optimizing operational models, and crafting actionable roadmaps. AI plays a crucial role here, enabling us to run complex simulations, predict outcomes of various strategic choices, and fine-tune solutions for maximum impact and efficiency before implementation.</p>
+                         <div class="chart-container">
+                            <canvas id="optimizationChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">Example: Optimization Potential Across Key Strategic Levers.</p>
+
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <h5 class="text-xl font-semibold mb-4">✨ Brainstorm Strategic Solutions ✨</h5>
+                            <p class="text-gray-600 text-sm mb-3">Describe a business challenge, and our AI will suggest initial strategic approaches. (e.g., "How to increase market share for a new product?")</p>
+                            <textarea id="challengeInput" placeholder="Enter your business challenge" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00A6FB] mb-3 h-24"></textarea>
+                            <button id="generateSolutionBtn" class="w-full bg-[#00A6FB] hover:bg-[#006494] text-white font-bold py-2 px-4 rounded-lg transition">Suggest Solutions</button>
+                            <div id="solutionLoadingIndicator" class="mt-4 text-center text-gray-500 hidden">Generating solutions...</div>
+                            <div id="llmSolutionOutput" class="mt-4 p-3 bg-gray-100 rounded-md text-sm text-gray-700 border border-gray-200 min-h-[50px] flex items-center justify-center text-center">
+                                Strategic ideas will appear here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="phase-card p-8">
+                        <h4 class="text-2xl font-bold text-[#0582CA] mb-2">Phase 3: Implementation Roadmap & Value Realization</h4>
+                        <p class="text-gray-600 mb-6">The final phase focuses on practical execution and ensuring the strategy delivers tangible results. We develop a clear, phased implementation plan, provide ongoing support, and establish robust performance monitoring frameworks. AI-powered dashboards and real-time analytics allow for continuous tracking of KPIs, quick identification of deviations, and iterative adjustments to ensure sustained value creation and measurable business growth.</p>
+                        <div class="chart-container">
+                            <canvas id="valueRealizationChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">Example: Projected Value Realization Over Time Post-Implementation.</p>
+
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <h5 class="text-xl font-semibold mb-4">✨ Identify Implementation Risks & Mitigation ✨</h5>
+                            <p class="text-gray-600 text-sm mb-3">Describe a project's implementation area or goal, and our AI will suggest potential risks and mitigation strategies.</p>
+                            <textarea id="implementationGoalInput" placeholder="e.g., Launching a new CRM system across sales teams" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00A6FB] mb-3 h-24"></textarea>
+                            <button id="generateRisksBtn" class="w-full bg-[#F9A03F] hover:bg-[#F26C4F] text-white font-bold py-2 px-4 rounded-lg transition">Analyze Risks</button>
+                            <div id="risksLoadingIndicator" class="mt-4 text-center text-gray-500 hidden">Analyzing risks...</div>
+                            <div id="llmRisksOutput" class="mt-4 p-3 bg-gray-100 rounded-md text-sm text-gray-700 border border-gray-200 min-h-[50px] flex items-center justify-center text-center">
+                                Potential risks and mitigation strategies will appear here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="ai-integration" class="bg-white -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">AI's Continuous Role Across All Phases</h3>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16">AI isn't just a tool; it's woven into the fabric of our methodology, amplifying human intelligence at every step of your growth journey.</p>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🔍</div>
+                    <h4 class="text-lg font-bold mb-2">Accelerated Discovery</h4>
+                    <p class="text-sm text-gray-600">Rapid market scans, trend spotting, and data synthesis from vast sources.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                     <div class="text-5xl mb-4">🔮</div>
+                    <h4 class="text-lg font-bold mb-2">Predictive Modeling</h4>
+                    <p class="text-sm text-gray-600">Forecasting scenarios, optimizing strategies, and assessing risks before execution.</p>
+                     <div class="mt-4 pt-3 border-t border-gray-200">
+                        <p class="text-gray-600 text-xs mb-2">Hypothetical Scenario Prediction:</p>
+                        <textarea id="scenarioInput" placeholder="e.g., Launching a product in a new market with 10% lower price" class="w-full p-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#00A6FB] text-xs h-16"></textarea>
+                        <button id="predictScenarioBtn" class="w-full bg-[#00A6FB] hover:bg-[#006494] text-white font-bold py-1 px-2 rounded-md transition text-sm mt-2">Predict Outcome</button>
+                        <div id="predictionLoadingIndicator" class="mt-2 text-center text-gray-500 text-xs hidden">Predicting...</div>
+                        <div id="llmPredictionOutput" class="mt-2 p-2 bg-gray-100 rounded-md text-xs text-gray-700 border border-gray-200 min-h-[30px] flex items-center justify-center text-center">
+                            Prediction will appear here.
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h4 class="text-lg font-bold mb-2">Targeted Insights</h4>
+                    <p class="text-sm text-gray-600">Identifying precise customer segments and optimal channels for maximum impact.</p>
+                    <div class="mt-4 pt-3 border-t border-gray-200">
+                        <p class="text-gray-600 text-xs mb-2">Audience Targeting Advice:</p>
+                        <textarea id="audienceInput" placeholder="e.g., Gen Z for sustainable fashion, B2B startups in SaaS" class="w-full p-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#00A6FB] text-xs h-16"></textarea>
+                        <button id="generateAudienceInsightBtn" class="w-full bg-[#F9A03F] hover:bg-[#F26C4F] text-white font-bold py-1 px-2 rounded-md transition text-sm mt-2">Get Targeting Tips</button>
+                        <div id="audienceLoadingIndicator" class="mt-2 text-center text-gray-500 text-xs hidden">Generating tips...</div>
+                        <div id="llmAudienceOutput" class="mt-2 p-2 bg-gray-100 rounded-md text-xs text-gray-700 border border-gray-200 min-h-[30px] flex items-center justify-center text-center">
+                            Targeting tips will appear here.
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">📈</div>
+                    <h4 class="text-lg font-bold mb-2">Real-time Performance</h4>
+                    <p class="text-sm text-gray-600">Continuous monitoring, anomaly detection, and dynamic optimization of strategies.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">✍️</div>
+                    <h4 class="text-lg font-bold mb-2">Content Augmentation</h4>
+                    <p class="text-sm text-gray-600">Assisting in the creation of optimized marketing and communication materials.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🔗</div>
+                    <h4 class="text-lg font-bold mb-2">Synergy Identification</h4>
+                    <p class="text-sm text-gray-600">Uncovering optimal partnership opportunities and M&A synergies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="mb-20 md:mb-32">
+             <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Benefits of Our Structured Approach</h3>
+             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#F9A03F]">✅</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Predictable Outcomes</h4>
+                        <p class="text-gray-600">Our phased, data-driven framework minimizes guesswork, leading to more reliable and predictable results.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#F9A03F]">⏱️</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Accelerated Value</h4>
+                        <p class="text-gray-600">Streamlined processes and AI amplification reduce time-to-value for your strategic initiatives.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#F9A03F]">💰</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Optimized Investment</h4>
+                        <p class="text-gray-600">Precise targeting and continuous optimization ensure every dollar invested delivers maximum ROI.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#F9A03F]">🤝</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Client Empowerment</h4>
+                        <p class="text-gray-600">We work as true partners, transferring knowledge and building internal capabilities for sustained success.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+        
+        <section id="contact" class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Build Your Growth Story?</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Our proven methodology is designed to transform your challenges into sustainable competitive advantages. Let's engineer your growth, by design.</p>
+            <button class="bg-[#F26C4F] hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition text-xl">Schedule a Strategic Discussion</button>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white mt-20 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 BRAIVE Growth Studio. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Engineered Growth by Design.</p>
+        </div>
+    </footer>
+
+    <script>
+        const vibrantPalette = {
+            blue: '#0582CA',
+            lighterBlue: '#00A6FB',
+            navy: '#006494',
+            orange: '#F9A03F',
+            coral: '#F26C4F',
+            gray: '#e5e7eb',
+            darkGray: '#9ca3af'
+        };
+
+        const chartTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        function wrapLabel(str, maxWidth = 16) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        new Chart(document.getElementById('insightsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Market Trends', wrapLabel('Consumer Insights', 16), wrapLabel('Competitive Data', 16), wrapLabel('Internal Performance', 16)].map(l => typeof l === 'string' ? wrapLabel(l, 16) : l),
+                datasets: [{
+                    label: 'Depth of Insights (Scale of 1-10)',
+                    data: [9, 8, 9, 7],
+                    backgroundColor: [vibrantPalette.blue, vibrantPalette.lighterBlue, vibrantPalette.navy, vibrantPalette.gray],
+                    borderColor: [vibrantPalette.navy, vibrantPalette.navy, vibrantPalette.navy, vibrantPalette.darkGray],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: { display: true, text: 'Insight Depth' }
+                    }
+                },
+                plugins: {
+                    ...chartTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('optimizationChart'), {
+            type: 'polarArea',
+            data: {
+                labels: ['Process Efficiency', 'Resource Allocation', 'Market Penetration', 'Cost Reduction', 'Value Creation'],
+                datasets: [{
+                    label: 'Optimization Potential (%)',
+                    data: [75, 80, 70, 85, 90],
+                    backgroundColor: [
+                        vibrantPalette.blue,
+                        vibrantPalette.lighterBlue,
+                        vibrantPalette.orange,
+                        vibrantPalette.coral,
+                        vibrantPalette.navy
+                    ],
+                    borderColor: 'white',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        pointLabels: { display: true, centerPointLabels: true, font: { size: 10 } },
+                        grid: { color: vibrantPalette.gray },
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    ...chartTooltipOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('valueRealizationChart'), {
+            type: 'line',
+            data: {
+                labels: ['Month 1', 'Month 3', 'Month 6', 'Month 9', 'Month 12'],
+                datasets: [{
+                    label: 'Cumulative Value Realized ($M)',
+                    data: [0.5, 1.8, 3.5, 5.2, 7.0],
+                    fill: true,
+                    backgroundColor: 'rgba(5, 130, 202, 0.2)',
+                    borderColor: vibrantPalette.blue,
+                    tension: 0.3,
+                    pointBackgroundColor: vibrantPalette.navy,
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Value Realized ($M)' }
+                    }
+                },
+                plugins: {
+                    ...chartTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+        document.querySelectorAll('header nav a, header a[href="#contact"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                     window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        document.getElementById('generateInsightBtn').addEventListener('click', async () => {
+            const industryInput = document.getElementById('industryInput').value;
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const llmOutput = document.getElementById('llmOutput');
+
+            if (!industryInput) {
+                llmOutput.textContent = 'Please enter an industry to get insights.';
+                return;
+            }
+
+            loadingIndicator.classList.remove('hidden');
+            llmOutput.textContent = '';
+
+            try {
+                let chatHistory = [];
+                const prompt = `Explain how 'Deep Assessment & Data Synthesis' in a consulting methodology would apply to the ${industryInput} industry, focusing on what data would be synthesized and what insights would be gained. Keep it concise, around 60-80 words.`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    llmOutput.textContent = text;
+                } else {
+                    llmOutput.textContent = 'Failed to generate insight. Please try again.';
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                llmOutput.textContent = 'An error occurred while generating insight.';
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('generateSolutionBtn').addEventListener('click', async () => {
+            const challengeInput = document.getElementById('challengeInput').value;
+            const solutionLoadingIndicator = document.getElementById('solutionLoadingIndicator');
+            const llmSolutionOutput = document.getElementById('llmSolutionOutput');
+
+            if (!challengeInput) {
+                llmSolutionOutput.textContent = 'Please describe a business challenge.';
+                return;
+            }
+
+            solutionLoadingIndicator.classList.remove('hidden');
+            llmSolutionOutput.textContent = ''; // Clear previous output
+
+            try {
+                let chatHistory = [];
+                const prompt = `Given the business challenge: "${challengeInput}", suggest 3-4 concise strategic approaches a consulting firm could recommend. Focus on actionable ideas.`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    llmSolutionOutput.textContent = text;
+                } else {
+                    llmSolutionOutput.textContent = 'Failed to generate solutions. Please try again.';
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                llmSolutionOutput.textContent = 'An error occurred while generating solutions.';
+            } finally {
+                solutionLoadingIndicator.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('generateRisksBtn').addEventListener('click', async () => {
+            const implementationGoalInput = document.getElementById('implementationGoalInput').value;
+            const risksLoadingIndicator = document.getElementById('risksLoadingIndicator');
+            const llmRisksOutput = document.getElementById('llmRisksOutput');
+
+            if (!implementationGoalInput) {
+                llmRisksOutput.textContent = 'Please describe your project\'s implementation area or goal.';
+                return;
+            }
+
+            risksLoadingIndicator.classList.remove('hidden');
+            llmRisksOutput.textContent = ''; // Clear previous output
+
+            try {
+                let chatHistory = [];
+                const prompt = `For a project with the implementation area/goal: "${implementationGoalInput}", identify 3-4 potential risks during implementation and provide a brief mitigation strategy for each. Format as: "Risk: [Risk]. Mitigation: [Mitigation]."`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    llmRisksOutput.textContent = text;
+                } else {
+                    llmRisksOutput.textContent = 'Failed to generate risks. Please try again.';
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                llmRisksOutput.textContent = 'An error occurred while generating risks.';
+            } finally {
+                risksLoadingIndicator.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('predictScenarioBtn').addEventListener('click', async () => {
+            const scenarioInput = document.getElementById('scenarioInput').value;
+            const predictionLoadingIndicator = document.getElementById('predictionLoadingIndicator');
+            const llmPredictionOutput = document.getElementById('llmPredictionOutput');
+
+            if (!scenarioInput) {
+                llmPredictionOutput.textContent = 'Please describe a hypothetical scenario.';
+                return;
+            }
+
+            predictionLoadingIndicator.classList.remove('hidden');
+            llmPredictionOutput.textContent = ''; // Clear previous output
+
+            try {
+                let chatHistory = [];
+                const prompt = `Given the hypothetical business scenario: "${scenarioInput}", provide a brief, high-level prediction of a likely outcome. Focus on a positive or negative impact. Keep it to 1-2 sentences.`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    llmPredictionOutput.textContent = text;
+                } else {
+                    llmPredictionOutput.textContent = 'Failed to generate prediction. Please try again.';
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                llmPredictionOutput.textContent = 'An error occurred while generating prediction.';
+            } finally {
+                predictionLoadingIndicator.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('generateAudienceInsightBtn').addEventListener('click', async () => {
+            const audienceInput = document.getElementById('audienceInput').value;
+            const audienceLoadingIndicator = document.getElementById('audienceLoadingIndicator');
+            const llmAudienceOutput = document.getElementById('llmAudienceOutput');
+
+            if (!audienceInput) {
+                llmAudienceOutput.textContent = 'Please describe your target audience.';
+                return;
+            }
+
+            audienceLoadingIndicator.classList.remove('hidden');
+            llmAudienceOutput.textContent = ''; // Clear previous output
+
+            try {
+                let chatHistory = [];
+                const prompt = `For a business campaign targeting "${audienceInput}", provide 2-3 concise tips on how to effectively reach and engage this audience.`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    llmAudienceOutput.textContent = text;
+                } else {
+                    llmAudienceOutput.textContent = 'Failed to generate tips. Please try again.';
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                llmAudienceOutput.textContent = 'An error occurred while generating tips.';
+            } finally {
+                audienceLoadingIndicator.classList.add('hidden');
+            }
+        });
+
+    </script>
+</body>
+</html>

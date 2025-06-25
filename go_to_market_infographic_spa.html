@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIVE Growth Studio | Go-To-Market Precision Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Source Material Analysis & Narrative Plan:
+    This infographic visually translates the "Client Proposal: Go-To-Market Precision".
+    The narrative guides a user from the common pitfalls of GTM strategies to BRAIVE's robust, AI-enhanced solution.
+    1.  Hook: Start with compelling statistics on GTM failures to establish the problem's urgency.
+    2.  Solution: Introduce BRAIVE's core principles for GTM success (Data-Driven, Predictive, Integrated, Risk-Mitigated).
+    3.  Methodology: Detail the 3-phase, 12-week process, using charts to visualize a key deliverable from each phase.
+    4.  Differentiator: Explicitly break down the "AI Advantage" in a dedicated section.
+    5.  Call to Action: Conclude with a clear value proposition and a prompt to start the engagement.
+
+    Visualization Selection & Justification (NO SVG, NO MERMAID JS):
+    -   GTM Failure Stats (Big Numbers): Goal: Inform. Method: Large, bold HTML text for immediate impact.
+    -   BRAIVE's Approach (Icon Grid): Goal: Organize. Method: Unicode characters styled with Tailwind CSS to represent the core pillars of the GTM approach.
+    -   Methodology Flow: Goal: Organize. Method: A vertical timeline using styled HTML divs, borders, and background colors to guide the user's eye down the page.
+    -   Phase 1 Chart (Market Sizing): Goal: Compare. Chosen Viz: Bar Chart (Chart.js/Canvas). Justification: Excellent for comparing the Total Addressable Market (TAM) across different potential segments.
+    -   Phase 2 Chart (Channel Investment): Goal: Inform. Chosen Viz: Donut Chart (Chart.js/Canvas). Justification: Clearly shows the proportional investment in the optimized channel mix.
+    -   Phase 3 Chart (Market Penetration): Goal: Change. Chosen Viz: Area Chart (Chart.js/Canvas). Justification: Ideal for showing projected market share growth over the initial months post-launch.
+    -   AI Advantage Diagram: Goal: Organize. Method: HTML/CSS grid to showcase different AI capabilities in a structured, easy-to-read format.
+    -   Timeline: Goal: Organize. Method: A simple horizontal flowchart created with styled HTML divs.
+
+    Constraint Confirmation:
+    -   NO MERMAID JS was used. All diagrams are built with HTML and Tailwind CSS.
+    -   NO SVG was used. All icons are Unicode characters, and all charts are rendered on HTML <canvas> elements by Chart.js.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #006494, #0582CA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .phase-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <span class="gradient-text">BRAIVE</span> Growth Studio
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#challenges" class="text-gray-600 hover:text-[#0582CA] transition">The Challenge</a>
+                <a href="#solution" class="text-gray-600 hover:text-[#0582CA] transition">Our Approach</a>
+                <a href="#methodology" class="text-gray-600 hover:text-[#0582CA] transition">Our Process</a>
+            </nav>
+            <a href="#contact" class="bg-[#0582CA] hover:bg-[#006494] text-white font-bold py-2 px-4 rounded-lg transition">Engineer Your Launch</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <section class="text-center mb-20 md:mb-32">
+            <h2 class="text-4xl md:text-6xl font-black mb-4">Launch with Clarity. Scale with Confidence.</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">A successful Go-To-Market strategy isn't just a plan; it's a precision-engineered process. We de-risk your market entry and accelerate revenue capture through our data-driven, AI-amplified GTM framework.</p>
+        </section>
+
+        <section id="challenges" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Most Go-To-Market Strategies Underperform</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#F9A03F] mb-4">75%</div>
+                    <p class="text-gray-600 font-medium">Of product launches fail to meet their revenue targets due to poor GTM execution.</p>
+                </div>
+                 <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#F26C4F] mb-4">42%</div>
+                    <p class="text-gray-600 font-medium">Of companies launch without adequate market research, targeting the wrong customers.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#F9A03F] mb-4">#1</div>
+                     <p class="text-gray-600 font-medium">Reason for startup failure is "no market need," a direct result of a flawed GTM strategy.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#F26C4F] mb-4">60%</div>
+                    <p class="text-gray-600 font-medium">Of companies lack strong alignment between sales and marketing teams during a launch.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="bg-gray-100 -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+             <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Framework for GTM Precision</h3>
+             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0582CA]">🎯</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Data-Driven Market Selection</h4>
+                        <p class="text-gray-600">We use AI-powered analysis to pinpoint the most profitable customer segments and channels, ensuring your efforts are focused where they matter most.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0582CA]">🔮</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Predictive Performance Modeling</h4>
+                        <p class="text-gray-600">Our AI models forecast launch outcomes and resource needs, allowing you to optimize your strategy and budget for the highest possible ROI.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0582CA]">🤝</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Integrated Execution Playbook</h4>
+                        <p class="text-gray-600">We create a unified strategy that aligns sales, marketing, and product teams, ensuring a seamless and powerful market entry.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0582CA]">🛡️</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Proactive Risk Mitigation</h4>
+                        <p class="text-gray-600">We identify potential GTM pitfalls early in the process and develop robust mitigation strategies to protect your investment.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="methodology" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">Our 12-Week GTM Acceleration Process</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="phase-card">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#0582CA] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold">Assessment & Positioning</h4>
+                                <p class="text-sm text-gray-500">Weeks 1-4</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We conduct a rigorous AI-driven assessment to size market opportunities, analyze competitors, and identify your most valuable customer segments to define a winning position.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Market Opportunity Sizing</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="marketSizingChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#0582CA] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">2</div>
+                             <div>
+                                <h4 class="text-xl font-bold">Integrated Strategy Design</h4>
+                                <p class="text-sm text-gray-500">Weeks 5-8</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We design a comprehensive GTM strategy, including an optimized channel mix, a unified sales & marketing playbook, and an AI-supported pricing structure.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Optimized Channel Investment</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="channelChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                     <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#0582CA] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">3</div>
+                             <div>
+                                <h4 class="text-xl font-bold">Launch & Performance</h4>
+                                <p class="text-sm text-gray-500">Weeks 9-12</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We deliver a granular launch plan, provide rollout support, and implement an AI-powered dashboard to monitor KPIs in real-time for continuous optimization.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Projected Market Penetration</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="penetrationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-advantage" class="bg-white -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">The BRAIVE AI Advantage in Go-To-Market</h3>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h4 class="text-lg font-bold mb-2">Demand Forecasting</h4>
+                    <p class="text-sm text-gray-600">Accurately predict demand across segments to optimize inventory and resource allocation.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                     <div class="text-5xl mb-4">📊</div>
+                    <h4 class="text-lg font-bold mb-2">Competitive Intelligence</h4>
+                    <p class="text-sm text-gray-600">Analyze competitor strategies, pricing, and messaging in real-time to find market gaps.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🔀</div>
+                    <h4 class="text-lg font-bold mb-2">Channel Optimization</h4>
+                    <p class="text-sm text-gray-600">Identify the most effective and cost-efficient channels to reach your target customers.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🏷️</div>
+                    <h4 class="text-lg font-bold mb-2">Price Elasticity Modeling</h4>
+                    <p class="text-sm text-gray-600">Simulate how pricing changes will impact demand and revenue to find the optimal price point.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Maximize Your Market Impact?</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Our 12-week engagement ensures your next launch is not just a plan, but a precision-engineered success story. Let's build your market leadership, by design.</p>
+            <button class="bg-[#F26C4F] hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition text-xl">Book a GTM Strategy Session</button>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white mt-20 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 BRAIVE Growth Studio. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Engineered Growth by Design.</p>
+        </div>
+    </footer>
+
+    <script>
+        const vibrantPalette = {
+            blue: '#0582CA',
+            darkerBlue: '#00A6FB',
+            navy: '#006494',
+            orange: '#F9A03F',
+            coral: '#F26C4F',
+            gray: '#e2e8f0', // slate-200
+            darkGray: '#64748b' // slate-500
+        };
+
+        const chartTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+        
+        function wrapLabel(str, maxWidth = 16) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const marketSizingLabels = ['Enterprise Segment', 'Mid-Market Segment', 'SMB Segment', 'New Geographic Market'].map(label => wrapLabel(label));
+        new Chart(document.getElementById('marketSizingChart'), {
+            type: 'bar',
+            data: {
+                labels: marketSizingLabels,
+                datasets: [{
+                    label: 'Total Addressable Market ($M)',
+                    data: [150, 220, 80, 120],
+                    backgroundColor: [
+                        vibrantPalette.blue,
+                        vibrantPalette.navy,
+                        vibrantPalette.darkerBlue,
+                        vibrantPalette.orange
+                    ],
+                    borderColor: vibrantPalette.darkGray,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartTooltipOptions,
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Market Size ($M)' }
+                    }
+                },
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('channelChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Direct Sales Force', 'Digital Marketing', 'Channel Partners', 'E-commerce Platform'],
+                datasets: [{
+                    label: 'Optimized Channel Investment',
+                    data: [35, 30, 20, 15],
+                    backgroundColor: [
+                        vibrantPalette.blue,
+                        vibrantPalette.navy,
+                        vibrantPalette.orange,
+                        vibrantPalette.coral
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                 ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('penetrationChart'), {
+            type: 'line',
+            data: {
+                labels: ['Launch', 'Month 1', 'Month 3', 'Month 6'],
+                datasets: [{
+                    label: 'Projected Market Share (%)',
+                    data: [0, 1.5, 4.0, 7.5],
+                    fill: true,
+                    backgroundColor: 'rgba(5, 130, 202, 0.2)',
+                    borderColor: vibrantPalette.blue,
+                    tension: 0.2,
+                    pointBackgroundColor: vibrantPalette.navy,
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                 ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Market Share (%)' }
+                    }
+                },
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+        
+        document.querySelectorAll('header nav a, header a[href="#contact"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                     window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIVE Growth Studio | Strategic Partnerships Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Source Material Analysis & Narrative Plan:
+    This infographic visualizes the "Client Proposal: Strategic Partnerships".
+    The narrative guides a user from the problem (partnership failures) to BRAIVE's solution and process.
+    1.  Hook: Start with compelling statistics about the challenges and failures in corporate partnerships.
+    2.  Solution: Introduce BRAIVE's core principles for partnership success (Strategic, AI-Powered, Value-Driven, Risk-Managed).
+    3.  Methodology: Detail the 3-phase, 12-week process, using charts to visualize a key deliverable from each phase.
+    4.  Differentiator: Explicitly detail the "AI Advantage" in forging strategic alliances.
+    5.  Call to Action: Conclude with a clear value proposition and prompt to begin the partnership journey.
+
+    Visualization Selection & Justification (NO SVG, NO MERMAID JS):
+    -   Partnership Challenges (Big Numbers): Goal: Inform. Method: Large, bold HTML text.
+    -   BRAIVE's Approach (Icon Grid): Goal: Organize. Method: Unicode characters styled with Tailwind CSS to represent the core principles.
+    -   Methodology Flow: Goal: Organize. Method: A vertical timeline using styled HTML divs, borders, and background colors.
+    -   Phase 1 Chart (Partner Scoring): Goal: Compare/Rank. Chosen Viz: Horizontal Bar Chart (Chart.js/Canvas). Justification: Excellent for comparing multiple potential partners against key scoring criteria.
+    -   Phase 2 Chart (Partnership Models): Goal: Inform. Chosen Viz: Donut Chart (Chart.js/Canvas). Justification: Clearly shows the recommended mix or focus of different potential partnership structures.
+    -   Phase 3 Chart (Value Realization): Goal: Change. Chosen Viz: Line Chart (Chart.js/Canvas). Justification: Best for illustrating the projected growth in synergistic value over time post-partnership.
+    -   AI Advantage Diagram: Goal: Organize. Method: HTML/CSS grid to display different AI capabilities in a structured format.
+    -   Timeline: Goal: Organize. Method: A horizontal flowchart created with styled HTML divs.
+
+    Constraint Confirmation:
+    -   NO MERMAID JS was used. All diagrams are built with HTML and Tailwind CSS.
+    -   NO SVG was used. All icons are Unicode characters, and all charts are rendered on HTML <canvas> elements by Chart.js.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #388E3C, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .phase-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <span class="gradient-text">BRAIVE</span> Growth Studio
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#challenges" class="text-gray-600 hover:text-[#4CAF50] transition">The Challenge</a>
+                <a href="#solution" class="text-gray-600 hover:text-[#4CAF50] transition">Our Approach</a>
+                <a href="#methodology" class="text-gray-600 hover:text-[#4CAF50] transition">Our Process</a>
+            </nav>
+            <a href="#contact" class="bg-[#4CAF50] hover:bg-[#388E3C] text-white font-bold py-2 px-4 rounded-lg transition">Engineer Your Alliances</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <section class="text-center mb-20 md:mb-32">
+            <h2 class="text-4xl md:text-6xl font-black mb-4">Forge Alliances That Fuel Growth.</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">In today's interconnected economy, the right partnership is your greatest growth accelerant. We help you identify, structure, and optimize strategic alliances that deliver tangible, sustainable value.</p>
+        </section>
+
+        <section id="challenges" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">The Partnership Paradox</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#FFC107] mb-4">70%</div>
+                    <p class="text-gray-600 font-medium">Of strategic alliances fail to meet their objectives, often due to a lack of strategic alignment.</p>
+                </div>
+                 <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#F44336] mb-4">50%</div>
+                    <p class="text-gray-600 font-medium">Of companies struggle to quantify the ROI of their partnerships, making value assessment difficult.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#FFC107] mb-4">#1</div>
+                     <p class="text-gray-600 font-medium">Barrier to success is finding the right partner, a process often plagued by incomplete data.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#F44336] mb-4">80%</div>
+                    <p class="text-gray-600 font-medium">Of executives believe partnerships are critical for growth, yet lack a formal process to manage them.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="bg-gray-100 -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+             <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Engineered Partnership Success</h3>
+             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#4CAF50]">🎯</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Strategic Alignment First</h4>
+                        <p class="text-gray-600">We ensure every potential alliance directly supports your core business objectives, avoiding 'paper partnerships' that lack real value.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#4CAF50]">🤖</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">AI-Powered Discovery</h4>
+                        <p class="text-gray-600">Our AI scans global ecosystems to identify and vet optimal partners with a speed and depth that manual analysis cannot match.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#4CAF50]">📈</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Value-Driven Structuring</h4>
+                        <p class="text-gray-600">We design win-win partnership models and build robust business cases that clearly define how value will be created and captured.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#4CAF50]">🛡️</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Proactive Risk Management</h4>
+                        <p class="text-gray-600">From due diligence to governance, we build frameworks to identify and mitigate potential risks before they can impact your alliance.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="methodology" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">Our 12-Week Alliance Acceleration Framework</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="phase-card">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#4CAF50] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold">Opportunity & Target ID</h4>
+                                <p class="text-sm text-gray-500">Weeks 1-4</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We define your strategic partnership goals and use our AI platform to scan, vet, and score a global list of potential partners, creating a prioritized shortlist.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Prioritized Partner Scorecard</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="partnerChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#4CAF50] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">2</div>
+                             <div>
+                                <h4 class="text-xl font-bold">Strategy & Deal Structure</h4>
+                                <p class="text-sm text-gray-500">Weeks 5-8</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We design the optimal partnership model, develop a compelling business case, and craft a comprehensive negotiation playbook to secure favorable terms.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Recommended Partnership Models</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="modelChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                     <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#4CAF50] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">3</div>
+                             <div>
+                                <h4 class="text-xl font-bold">Negotiation & Value</h4>
+                                <p class="text-sm text-gray-500">Weeks 9-12</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We provide expert negotiation support and deliver a detailed integration plan and AI-driven dashboard to ensure the partnership creates sustained value.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Projected Synergistic Value</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="valueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-advantage" class="bg-white -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">The BRAIVE AI Advantage in Building Alliances</h3>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h4 class="text-lg font-bold mb-2">Ecosystem Scanning</h4>
+                    <p class="text-sm text-gray-600">Identify non-obvious partnership opportunities across industries and geographies.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                     <div class="text-5xl mb-4">🧬</div>
+                    <h4 class="text-lg font-bold mb-2">Compatibility Scoring</h4>
+                    <p class="text-sm text-gray-600">Assess strategic, financial, and cultural fit using multi-factor AI algorithms.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">⚖️</div>
+                    <h4 class="text-lg font-bold mb-2">Synergy Prediction</h4>
+                    <p class="text-sm text-gray-600">Model the potential financial and operational synergies of a partnership to build a robust business case.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">📈</div>
+                    <h4 class="text-lg font-bold mb-2">Performance Monitoring</h4>
+                    <p class="text-sm text-gray-600">Use AI dashboards to track alliance health and KPIs in real-time, enabling proactive management.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Build Your Growth Ecosystem?</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Our 12-week framework provides a clear path to identifying and capturing value through strategic alliances. Let's engineer your partnerships for success.</p>
+            <button class="bg-[#F44336] hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition text-xl">Schedule a Partnership Strategy Session</button>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white mt-20 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 BRAIVE Growth Studio. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Engineered Growth by Design.</p>
+        </div>
+    </footer>
+
+    <script>
+        const vibrantPalette = {
+            green: '#4CAF50',
+            darkGreen: '#388E3C',
+            blue: '#2196F3',
+            amber: '#FFC107',
+            red: '#F44336',
+            gray: '#e2e8f0',
+            darkGray: '#64748b'
+        };
+
+        const chartTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+        
+        function wrapLabel(str, maxWidth = 16) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const partnerLabels = ['Partner A (Tech)', 'Partner B (Distribution)', 'Partner C (Market Access)', 'Partner D (Co-Branding)'].map(label => wrapLabel(label));
+        new Chart(document.getElementById('partnerChart'), {
+            type: 'bar',
+            data: {
+                labels: partnerLabels,
+                datasets: [{
+                    label: 'Overall Partnership Score',
+                    data: [92, 85, 78, 65],
+                    backgroundColor: [
+                        vibrantPalette.green,
+                        vibrantPalette.darkGreen,
+                        vibrantPalette.blue,
+                        vibrantPalette.amber
+                    ],
+                    borderColor: vibrantPalette.darkGray,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartTooltipOptions,
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Compatibility Score (out of 100)' }
+                    }
+                },
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('modelChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Joint Venture', 'Licensing Agreement', 'Co-Marketing', 'Strategic Investment'],
+                datasets: [{
+                    label: 'Recommended Model Focus',
+                    data: [40, 25, 20, 15],
+                    backgroundColor: [
+                        vibrantPalette.green,
+                        vibrantPalette.blue,
+                        vibrantPalette.amber,
+                        vibrantPalette.red
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                 ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('valueChart'), {
+            type: 'line',
+            data: {
+                labels: ['Launch', 'Year 1', 'Year 2', 'Year 3'],
+                datasets: [{
+                    label: 'Projected Synergistic Value ($M)',
+                    data: [0, 5, 12, 25],
+                    fill: true,
+                    backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                    borderColor: vibrantPalette.green,
+                    tension: 0.2,
+                    pointBackgroundColor: vibrantPalette.darkGreen,
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                 ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Cumulative Value ($M)' }
+                    }
+                },
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+        
+        document.querySelectorAll('header nav a, header a[href="#contact"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                     window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

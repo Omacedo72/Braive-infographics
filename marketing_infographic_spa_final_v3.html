@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIVE Growth Studio | Marketing & Brand Optimization Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- 
+    Chosen Palette: Energetic & Playful (#003554, #0099D5, #115f8d, #e57a44, #FFA500)
+    Application Structure Plan: A single-page, top-to-bottom scrolling narrative designed for intuitive user flow. The structure begins with a high-impact hook (The Challenge), presents the unique value proposition (Our Approach), details the core process in a three-column layout (Our Methodology), highlights the key differentiator (The AI Advantage), and concludes with a clear call to action. This thematic structure tells a coherent story from problem to solution to outcome, making it more engaging and easier to digest than a report-based layout.
+    Visualization & Content Choices:
+    -   Marketing Challenges (Big Numbers): Goal: Inform. Method: Large, bold HTML text. Justification: High-impact visualization for key stats. Library: HTML/CSS. CONFIRMATION: NO SVG used.
+    -   BRAIVE's Approach (Icon Grid): Goal: Organize. Method: Unicode characters styled with Tailwind CSS. Justification: Cleanly represents core concepts without images. Library: HTML/CSS. CONFIRMATION: NO SVG used.
+    -   Phase 1 Chart (Brand Audit): Goal: Compare. Chosen Viz: Radar Chart. Justification: Ideal for a 360-degree performance view against benchmarks. Library: Chart.js/Canvas. CONFIRMATION: NO SVG used.
+    -   Phase 2 Chart (Channel Mix): Goal: Inform (composition). Chosen Viz: Donut Chart. Justification: Modern, clear way to show parts of a whole. Library: Chart.js/Canvas. CONFIRMATION: NO SVG used.
+    -   Phase 3 Chart (Revenue Impact): Goal: Change (trend). Chosen Viz: Line Chart. Justification: Standard for showing projections over time. Library: Chart.js/Canvas. CONFIRMATION: NO SVG used.
+    -   AI Advantage Diagram: Goal: Organize. Method: HTML/CSS grid. Justification: Best for presenting distinct but related concepts. Library: HTML/CSS. CONFIRMATION: NO SVG used.
+    -   Timeline: Goal: Organize. Method: HTML/CSS flowchart. Justification: Simple visual representation of the project timeline. Library: HTML/CSS. CONFIRMATION: NO SVG used.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #115f8d, #0099D5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .phase-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <span class="gradient-text">BRAIVE</span> Growth Studio
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#challenges" class="text-gray-600 hover:text-[#0099D5] transition">Challenges</a>
+                <a href="#solution" class="text-gray-600 hover:text-[#0099D5] transition">Our Approach</a>
+                <a href="#methodology" class="text-gray-600 hover:text-[#0099D5] transition">Methodology</a>
+            </nav>
+            <a href="#contact" class="bg-[#0099D5] hover:bg-[#115f8d] text-white font-bold py-2 px-4 rounded-lg transition">Optimize Your Brand</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <section class="text-center mb-20 md:mb-32">
+            <h2 class="text-4xl md:text-6xl font-black mb-4">Unlock Your Brand's Full Potential.</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">From brand clarity to pipeline generation, we engineer marketing and brand strategies that deliver measurable, scalable growth. It's time to translate your marketing investment into undeniable ROI.</p>
+        </section>
+
+        <section id="challenges" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">The Modern Marketing Challenge</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#FFA500] mb-4">76%</div>
+                    <p class="text-gray-600 font-medium">Of CMOs struggle to prove the ROI of their marketing spend to their board.</p>
+                </div>
+                 <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#e57a44] mb-4">40%</div>
+                    <p class="text-gray-600 font-medium">Of consumers say they won't buy from brands that fail to personalize their experience.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#FFA500] mb-4">50%</div>
+                     <p class="text-gray-600 font-medium">Of all marketing content created goes unused, representing a massive resource drain.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-5xl font-extrabold text-[#e57a44] mb-4">#1</div>
+                    <p class="text-gray-600 font-medium">"Cutting through the digital noise" is the top challenge for marketers today.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="bg-gray-100 -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+             <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Engineered Brand & Marketing Success</h3>
+             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0099D5]">📊</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Data-Driven Decisions</h4>
+                        <p class="text-gray-600">We replace intuition with rigorous data analysis, ensuring every marketing dollar is invested for maximum impact and measurable return.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0099D5]">🤖</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">AI-Amplified Insights</h4>
+                        <p class="text-gray-600">Leverage advanced AI for deeper consumer understanding, predictive campaign performance, and real-time optimization capabilities.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0099D5]">🔗</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Holistic Brand-to-Pipeline View</h4>
+                        <p class="text-gray-600">We connect your brand strategy directly to digital execution, ensuring your identity drives tangible sales pipeline and revenue.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-[#0099D5]">📈</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Focus on Quantifiable Results</h4>
+                        <p class="text-gray-600">Our success is measured by yours. We provide clear metrics to demonstrate value, from lead generation to customer lifetime value.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="methodology" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">Our 10-Week Marketing Transformation Journey</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="phase-card">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#0099D5] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold">Audit & Insights</h4>
+                                <p class="text-sm text-gray-500">Weeks 1-3</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We conduct a 360° diagnostic of your brand, market, and performance, using AI-enhanced analysis to uncover perception gaps and key optimization opportunities.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Brand Performance Audit</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="auditChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#0099D5] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">2</div>
+                             <div>
+                                <h4 class="text-xl font-bold">Strategy & Optimization</h4>
+                                <p class="text-sm text-gray-500">Weeks 4-8</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We craft a compelling brand strategy and a data-driven marketing plan. AI simulates campaign performance, optimizing your channel mix before a single dollar is spent.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Optimized Channel & Content Mix</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="channelChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                     <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-[#0099D5] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mr-4">3</div>
+                             <div>
+                                <h4 class="text-xl font-bold">Roadmap & Revenue</h4>
+                                <p class="text-sm text-gray-500">Weeks 9-10</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">We deliver a clear implementation roadmap and a custom performance dashboard. AI-driven models forecast the direct impact of our strategy on your revenue.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6">
+                        <h5 class="font-bold text-center mb-2">Deliverable: Projected Revenue Impact</h5>
+                        <div class="chart-container h-64">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-advantage" class="bg-white -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">The BRAIVE AI Advantage in Marketing</h3>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">👂</div>
+                    <h4 class="text-lg font-bold mb-2">Sentiment Analysis</h4>
+                    <p class="text-sm text-gray-600">Understand what the market *really* thinks about your brand and competitors in real-time.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                     <div class="text-5xl mb-4">🔮</div>
+                    <h4 class="text-lg font-bold mb-2">Predictive Performance</h4>
+                    <p class="text-sm text-gray-600">Forecast campaign results and ROI before launch, enabling smarter budget allocation.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">👥</div>
+                    <h4 class="text-lg font-bold mb-2">Audience Segmentation</h4>
+                    <p class="text-sm text-gray-600">Identify and target high-value customer segments with unparalleled precision.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-5xl mb-4">✍️</div>
+                    <h4 class="text-lg font-bold mb-2">Generative Content</h4>
+                    <p class="text-sm text-gray-600">Augment creativity with AI-powered generation of ad copy and content variations.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Engineer Your Brand's Growth?</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Our 10-week engagement provides a clear path to brand clarity and measurable marketing ROI. Let's build your brand's future, by design.</p>
+            <button class="bg-[#e57a44] hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg transition text-xl">Schedule Your Brand Audit</button>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white mt-20 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 BRAIVE Growth Studio. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Engineered Growth by Design.</p>
+        </div>
+    </footer>
+
+    <script>
+        const vibrantPalette = {
+            blue: '#0099D5',
+            darkBlue: '#115f8d',
+            navy: '#003554',
+            orange: '#FFA500',
+            coral: '#e57a44',
+            gray: '#e2e8f0',
+            darkGray: '#64748b'
+        };
+
+        const chartTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+        
+        function wrapLabel(str, maxWidth = 16) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const auditLabels = ['Brand Clarity', 'Market Perception', 'Digital Presence', 'Competitive Standing', 'Content Effectiveness', 'Audience Engagement'].map(label => wrapLabel(label));
+        new Chart(document.getElementById('auditChart'), {
+            type: 'radar',
+            data: {
+                labels: auditLabels,
+                datasets: [
+                {
+                    label: 'Current Performance',
+                    data: [65, 50, 70, 55, 60, 75],
+                    backgroundColor: 'rgba(229, 122, 68, 0.2)',
+                    borderColor: vibrantPalette.coral,
+                    pointBackgroundColor: vibrantPalette.coral,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: vibrantPalette.coral
+                },
+                {
+                    label: 'Industry Benchmark',
+                    data: [80, 75, 85, 70, 78, 82],
+                    backgroundColor: 'rgba(0, 153, 213, 0.2)',
+                    borderColor: vibrantPalette.blue,
+                    pointBackgroundColor: vibrantPalette.blue,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: vibrantPalette.blue
+                }]
+            },
+            options: {
+                ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: vibrantPalette.gray },
+                        grid: { color: vibrantPalette.gray },
+                        pointLabels: { font: { size: 12 } },
+                        ticks: { backdropColor: 'rgba(255, 255, 255, 0.75)' }
+                    }
+                },
+                plugins: {
+                    ...chartTooltipOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('channelChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Content Marketing & SEO', 'Performance Marketing (SEM)', 'Strategic Social Media', 'PR & Partnerships'],
+                datasets: [{
+                    label: 'Optimized Marketing Investment',
+                    data: [40, 25, 25, 10],
+                    backgroundColor: [
+                        vibrantPalette.blue,
+                        vibrantPalette.navy,
+                        vibrantPalette.orange,
+                        vibrantPalette.coral
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                 ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'line',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3 (Projected)', 'Q4 (Projected)'],
+                datasets: [{
+                    label: 'Pipeline-Influenced Revenue ($M)',
+                    data: [2.1, 2.5, 3.8, 5.2],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 153, 213, 0.2)',
+                    borderColor: vibrantPalette.blue,
+                    tension: 0.1,
+                    pointBackgroundColor: vibrantPalette.navy,
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                 ...chartTooltipOptions,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: { display: true, text: 'Revenue ($M)' }
+                    }
+                },
+                plugins: {
+                     ...chartTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+        
+        document.querySelectorAll('header nav a, header a[href="#contact"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                     window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

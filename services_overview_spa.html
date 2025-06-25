@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIVE Growth Studio | Services Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Source Material Analysis & Narrative Plan:
+    This infographic provides a high-level visual overview of all five BRAIVE Growth Studio services.
+    The narrative flow is structured to introduce BRAIVE's core mission, present each service with its value proposition, highlight the unifying AI advantage, and emphasize the integrated approach.
+    1.  Introduction: Bold statement about Engineering Growth by Design.
+    2.  Core Pillars: Showcase each of the 5 services with an icon, brief description, and key benefit/metric.
+    3.  AI Amplification: Explain AI's cross-cutting role.
+    4.  Integrated Impact: A visual to convey how services work together.
+    5.  Call to Action: Simple prompt to engage.
+
+    Visualization Selection & Justification (NO SVG, NO MERMAID JS):
+    -   Header/Title: Goal: Inform. Method: Large, bold HTML text with gradient. Justification: Creates immediate impact.
+    -   Service Blocks: Goal: Organize/Inform. Method: Tailwind-styled grid cards for each service.
+        -   Icons: Unicode characters (e.g., 💡, 📊, 🚀, 🤝, 💰). Justification: Simple, universal, and adheres to no-SVG constraint.
+        -   Key Metrics/Benefits: Large HTML numbers/text. Justification: Quickly conveys value proposition.
+        -   Descriptions: Concise text. Justification: Provides necessary context.
+    -   AI Amplification Icons: Goal: Inform/Organize. Method: Small grid of Unicode icons with brief text. Justification: Visually reinforces AI as a core element without complex graphics.
+    -   Integrated Impact Diagram: Goal: Organize/Relationships. Method: Concentric HTML divs and text. Justification: Conceptually shows how individual services feed into a central "Engineered Growth" core. This is a creative solution to show relationships without relying on prohibited diagramming tools.
+
+    Color Palette Selection:
+    -   Chosen Palette: "Brilliant Blues & Energetic Accents".
+    -   HEX Codes: #0582CA (Primary Blue), #00A6FB (Lighter Blue), #006494 (Navy Accent), #F9A03F (Orange Accent), #F26C4F (Coral Accent).
+    -   Justification: Maintains brand consistency, professional and vibrant, ensuring high contrast and readability.
+
+    Constraint Confirmation:
+    -   NO MERMAID JS was used. All diagrams are built with HTML and Tailwind CSS.
+    -   NO SVG was used. All icons are Unicode characters. No Chart.js or Plotly.js charts are included as this is a high-level overview not focused on granular data points.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0582CA, #00A6FB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .service-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .integrated-core {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #0582CA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+            text-align: center;
+            position: relative; /* For absolute positioning of text around it */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <span class="gradient-text">BRAIVE</span> Growth Studio
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-[#0582CA] transition">Services</a>
+                <a href="#ai-amplification" class="text-gray-600 hover:text-[#0582CA] transition">AI Amplification</a>
+                <a href="#integration" class="text-gray-600 hover:text-[#0582CA] transition">Our Impact</a>
+            </nav>
+            <a href="#contact" class="bg-[#0582CA] hover:bg-[#006494] text-white font-bold py-2 px-4 rounded-lg transition">Get Started</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <section class="text-center mb-20 md:mb-32">
+            <h2 class="text-4xl md:text-6xl font-black mb-4 leading-tight">Engineered Growth by Design.</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">BRAIVE Growth Studio fuses innovation, market intelligence, and strategic financial planning to deliver scalable, sustainable success amplified by cutting-edge AI.</p>
+        </section>
+
+        <section id="services" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Core Growth Pillars</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="service-card p-8 text-center">
+                    <div class="text-5xl mb-4 text-[#0582CA]">💡</div>
+                    <h4 class="text-2xl font-bold mb-2">Innovation Acceleration</h4>
+                    <p class="text-gray-600 mb-4">Turn bold ideas into market-ready solutions, faster and smarter, leveraging data for rapid validation.</p>
+                    <div class="text-4xl font-extrabold text-[#F9A03F]">40% Faster</div>
+                    <p class="text-sm text-gray-500 mt-1">Time-to-Market</p>
+                </div>
+
+                <div class="service-card p-8 text-center">
+                    <div class="text-5xl mb-4 text-[#0582CA]">📊</div>
+                    <h4 class="text-2xl font-bold mb-2">Marketing & Brand Optimization</h4>
+                    <p class="text-gray-600 mb-4">Data-led strategy and brand clarity to drive real pipeline and unlock market potential.</p>
+                    <div class="text-4xl font-extrabold text-[#F9A03F]">30% ROI ↑</div>
+                    <p class="text-sm text-gray-500 mt-1">Marketing Investment</p>
+                </div>
+
+                <div class="service-card p-8 text-center">
+                    <div class="text-5xl mb-4 text-[#0582CA]">🚀</div>
+                    <h4 class="text-2xl font-bold mb-2">Go-To-Market Precision</h4>
+                    <p class="text-gray-600 mb-4">Launch with clarity, scale with confidence, and maximize your market entry ROI.</p>
+                    <div class="text-4xl font-extrabold text-[#F9A03F]">25% Higher</div>
+                    <p class="text-sm text-gray-500 mt-1">Market Penetration</p>
+                </div>
+
+                <div class="service-card p-8 text-center">
+                    <div class="text-5xl mb-4 text-[#0582CA]">🤝</div>
+                    <h4 class="text-2xl font-bold mb-2">Strategic Partnerships</h4>
+                    <p class="text-gray-600 mb-4">Identify, structure, and optimize alliances that strategically fuel growth and capabilities.</p>
+                    <div class="text-4xl font-extrabold text-[#F9A03F]">2X Synergies</div>
+                    <p class="text-sm text-gray-500 mt-1">From Alliances</p>
+                </div>
+
+                <div class="service-card p-8 text-center">
+                    <div class="text-5xl mb-4 text-[#0582CA]">💰</div>
+                    <h4 class="text-2xl font-bold mb-2">Finance Strategy</h4>
+                    <p class="text-gray-600 mb-4">Leverage deep financial expertise to fund, sustain, and optimize growth initiatives.</p>
+                    <div class="text-4xl font-extrabold text-[#F9A03F]">15% EBIT ↑</div>
+                    <p class="text-sm text-gray-500 mt-1">Margin Expansion</p>
+                </div>
+
+                <div class="service-card p-8 text-center bg-[#00A6FB] text-white flex flex-col justify-center">
+                    <div class="text-5xl mb-4">🤖</div>
+                    <h4 class="text-2xl font-bold mb-2">AI Amplification</h4>
+                    <p class="mb-4">Intelligently integrated AI tools across EVERY pillar for data-driven insights and smarter execution.</p>
+                    <div class="grid grid-cols-2 gap-4 text-sm font-medium">
+                        <span>Predictive Analytics</span>
+                        <span>Market Intelligence</span>
+                        <span>Process Automation</span>
+                        <span>Scenario Modeling</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="integration" class="bg-gray-100 -mx-6 px-6 py-20 md:py-28 mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">The Power of Integrated Growth</h3>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16">Our cross-disciplinary approach ensures that each growth pillar reinforces the others, creating a cohesive strategy that drives scalable and sustainable success.</p>
+
+            <div class="relative flex flex-col items-center justify-center py-10">
+                <div class="integrated-core">
+                    <div class="text-3xl font-black mb-2 leading-tight">ENGINEERED</div>
+                    <div class="text-xl font-bold leading-tight">GROWTH</div>
+                    <div class="text-sm mt-2 text-gray-200">By Design</div>
+                </div>
+
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-full h-full relative">
+                        <div class="absolute top-1/2 left-0 w-full h-0.5 bg-[#00A6FB]"></div>
+                        <div class="absolute top-0 left-1/2 h-full w-0.5 bg-[#00A6FB]"></div>
+                        <div class="absolute top-[20%] left-[20%] w-0.5 h-[60%] rotate-45 transform origin-center bg-[#00A6FB]"></div>
+                        <div class="absolute top-[20%] right-[20%] w-0.5 h-[60%] -rotate-45 transform origin-center bg-[#00A6FB]"></div>
+                        <div class="absolute bottom-[20%] left-[20%] w-0.5 h-[60%] -rotate-45 transform origin-center bg-[#00A6FB]"></div>
+                        <div class="absolute bottom-[20%] right-[20%] w-0.5 h-[60%] rotate-45 transform origin-center bg-[#00A6FB]"></div>
+                    </div>
+                </div>
+
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 bg-white rounded-lg shadow-md font-semibold text-sm text-center border border-gray-200">Innovation</div>
+                <div class="absolute top-1/2 -left-8 -translate-x-full -translate-y-1/2 p-2 bg-white rounded-lg shadow-md font-semibold text-sm text-center border border-gray-200">Finance</div>
+                <div class="absolute top-1/2 -right-8 translate-x-full -translate-y-1/2 p-2 bg-white rounded-lg shadow-md font-semibold text-sm text-center border border-gray-200">Go-To-Market</div>
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 p-2 bg-white rounded-lg shadow-md font-semibold text-sm text-center border border-gray-200">Marketing</div>
+                <div class="absolute top-[10%] left-[10%] -translate-x-1/2 -translate-y-1/2 p-2 bg-white rounded-lg shadow-md font-semibold text-sm text-center border border-gray-200">Partnerships</div>
+            </div>
+        </section>
+        
+        <section id="contact" class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Unlock Your Full Potential.</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">BRAIVE Growth Studio is ready to engineer your next phase of sustainable growth. Let's schedule a strategic discussion to transform your vision into reality.</p>
+            <button class="bg-[#F26C4F] hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition text-xl">Schedule Your Consultation</button>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white mt-20 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 BRAIVE Growth Studio. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Engineered Growth by Design.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

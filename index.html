@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIVE Growth Studio | Services Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- 
+    Chosen Palette: Brilliant Blues & Energetic Accents (#0582CA, #00A6FB, #006494, #F9A03F, #F26C4F)
+    Application Structure Plan: This SPA acts as a central navigation hub for all detailed service infographics. It features a prominent hero section introducing BRAIVE Growth Studio, followed by a responsive grid of clickable cards. Each card represents a key service area, containing a title, a brief value proposition, and an icon, serving as a direct link to the corresponding detailed infographic SPA. This structure is chosen for maximum discoverability and ease of navigation, allowing users to quickly access the specific information they need.
+    Visualization & Content Choices:
+    -   Hero Section: Goal: Inform. Method: Large, bold HTML text with a gradient. Justification: Creates an impactful brand introduction. Library: HTML/CSS.
+    -   Service Cards (Grid): Goal: Organize/Inform. Method: Tailwind-styled `div` elements, each containing a heading, a paragraph, and a Unicode icon. Each card is wrapped in an `<a>` tag to link to another SPA. Justification: Provides clear, scannable entry points to detailed content, promoting exploration. Library: HTML/CSS.
+    -   Icons: Unicode characters (💡, 📊, 🚀, 🤝, 💰, ⚙️, 🧠). Justification: Simple, effective, and adheres to no-SVG constraint. Library: HTML/CSS.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #006494, #0582CA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .service-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Ensure cards in a row have equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <span class="gradient-text">BRAIVE</span> Growth Studio
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#welcome" class="text-gray-600 hover:text-[#0582CA] transition">Home</a>
+                <a href="#services-grid" class="text-gray-600 hover:text-[#0582CA] transition">Our Services</a>
+            </nav>
+            <a href="mailto:pittsburghfed@gmail.com" class="bg-[#0582CA] hover:bg-[#006494] text-white font-bold py-2 px-4 rounded-lg transition">Contact Us</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        
+        <section id="welcome" class="text-center mb-20 md:mb-32">
+            <h2 class="text-4xl md:text-6xl font-black mb-4 leading-tight">Engineer Your Growth by Design.</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">BRAIVE Growth Studio fuses innovation strategy, market intelligence, marketing optimization, and strategic partnerships to drive scalable, sustainable success; amplified by the smart integration of AI tools across every pillar.</p>
+        </section>
+
+        <section id="services-grid" class="mb-20 md:mb-32">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore Our Solutions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <a href="innovation_infographic_spa.html" class="block">
+                    <div class="service-card p-8 text-center">
+                        <div>
+                            <div class="text-5xl mb-4 text-[#0582CA]">💡</div>
+                            <h4 class="text-2xl font-bold mb-2">Innovation Acceleration</h4>
+                            <p class="text-gray-600 mb-4">Turn bold ideas into market-ready solutions, faster and smarter, with data-driven validation.</p>
+                        </div>
+                        <div class="text-lg font-semibold text-[#F9A03F] mt-4">Accelerate Your Concepts</div>
+                    </div>
+                </a>
+
+                <a href="marketing_infographic_spa_final_v3.html" class="block">
+                    <div class="service-card p-8 text-center">
+                        <div>
+                            <div class="text-5xl mb-4 text-[#0582CA]">📊</div>
+                            <h4 class="text-2xl font-bold mb-2">Marketing & Brand Optimization</h4>
+                            <p class="text-gray-600 mb-4">Data-led strategy and brand clarity to drive real pipeline and unlock market potential.</p>
+                        </div>
+                        <div class="text-lg font-semibold text-[#F9A03F] mt-4">Boost Your Brand ROI</div>
+                    </div>
+                </a>
+
+                <a href="go_to_market_infographic_spa.html" class="block">
+                    <div class="service-card p-8 text-center">
+                        <div>
+                            <div class="text-5xl mb-4 text-[#0582CA]">🚀</div>
+                            <h4 class="text-2xl font-bold mb-2">Go-To-Market Precision</h4>
+                            <p class="text-gray-600 mb-4">Launch with clarity, scale with confidence, and maximize your market entry ROI.</p>
+                        </div>
+                        <div class="text-lg font-semibold text-[#F9A03F] mt-4">Ensure Flawless Launches</div>
+                    </div>
+                </a>
+
+                <a href="strategic_partnerships_infographic_spa.html" class="block">
+                    <div class="service-card p-8 text-center">
+                        <div>
+                            <div class="text-5xl mb-4 text-[#0582CA]">🤝</div>
+                            <h4 class="text-2xl font-bold mb-2">Strategic Partnerships</h4>
+                            <p class="text-gray-600 mb-4">Identify, structure, and optimize alliances that strategically fuel growth and capabilities.</p>
+                        </div>
+                        <div class="text-lg font-semibold text-[#F9A03F] mt-4">Forge Powerful Alliances</div>
+                    </div>
+                </a>
+
+                <a href="finance_strategy_infographic.html" class="block">
+                    <div class="service-card p-8 text-center">
+                        <div>
+                            <div class="text-5xl mb-4 text-[#0582CA]">💰</div>
+                            <h4 class="text-2xl font-bold mb-2">Finance Strategy</h4>
+                            <p class="text-gray-600 mb-4">Leverage deep financial expertise to fund, sustain, and optimize growth initiatives.</p>
+                        </div>
+                        <div class="text-lg font-semibold text-[#F9A03F] mt-4">Optimize Your Financial Health</div>
+                    </div>
+                </a>
+
+                <a href="methodology_overview_spa.html" class="block">
+                    <div class="service-card p-8 text-center">
+                        <div>
+                            <div class="text-5xl mb-4 text-[#0582CA]">⚙️</div>
+                            <h4 class="text-2xl font-bold mb-2">Our Methodology</h4>
+                            <p class="text-gray-600 mb-4">Explore our structured, data-driven, and AI-amplified framework that underpins all our services.</p>
+                        </div>
+                        <div class="text-lg font-semibold text-[#F9A03F] mt-4">Understand Our Process</div>
+                    </div>
+                </a>
+
+                <a href="services_overview_spa.html" class="block lg:col-span-3">
+                    <div class="service-card p-8 text-center">
+                        <div>
+                            <div class="text-5xl mb-4 text-[#0582CA]">🧠</div>
+                            <h4 class="text-2xl font-bold mb-2">Comprehensive Services Overview</h4>
+                            <p class="text-gray-600 mb-4">Get a high-level summary of all our core growth pillars and how they integrate for holistic success.</p>
+                        </div>
+                        <div class="text-lg font-semibold text-[#F9A03F] mt-4">See All Services at a Glance</div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+        
+        <section id="contact" class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Engineer Your Next Phase of Growth?</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Contact us today to schedule a strategic discussion and discover how BRAIVE Growth Studio can transform your vision into reality.</p>
+            <a href="mailto:pittsburghfed@gmail.com" class="bg-[#F26C4F] hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition text-xl">Get in Touch</a>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white mt-20 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 BRAIVE Growth Studio. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Engineered Growth by Design.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
